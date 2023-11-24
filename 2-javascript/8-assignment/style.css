@@ -1,0 +1,9 @@
+.inner-image {
+  height: 180px;
+}
+
+.profile {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}

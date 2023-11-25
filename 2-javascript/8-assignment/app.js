@@ -62,14 +62,14 @@ const displayData = (data) => {
         
         ${data.others.posted_date ? time : ""}
       </div>
-      <div class="row d-flex justify-content-center align-items-center mt-2">
-        <div class="col-lg-3">
+      <div class="row d-flex justify-content-center align-items-center mt-2 px-2">
+        <div class="col-lg-3 col-sm-6 d-flex justify-content-center align-items-center">
           <img src="${
             data.authors[0].profile_picture
           }" alt="" class="profile" />
           
         </div>
-        <div class="col-lg-8 ms-4">
+        <div class="col-lg-8 col-sm-12 ms-4">
           <h6 class="">${data.title}</h6>
           <div class="d-flex justify-content-start align-items-center">
             <div><small class="text-secondary">${
@@ -130,7 +130,7 @@ function colorChange(cat) {
 
       if (list[i] == cat) {
         id.classList.add("btn-danger");
-        console.log(cat);
+        // console.log(cat);
       } else {
         // console.log(id.classList);
         id.classList.remove("btn-danger");

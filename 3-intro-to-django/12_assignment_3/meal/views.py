@@ -48,6 +48,6 @@ def index(request):
   return render(request, 'index.html', {'data' : meals['categories']})
 
 
-def about(request):
-  print(request.GET)
-  return render(request, 'about.html', {'id' : request.GET})
+# def about(request):
+#   print(request.GET)
+#   return render(request, 'about.html', {'id' : request.GET})

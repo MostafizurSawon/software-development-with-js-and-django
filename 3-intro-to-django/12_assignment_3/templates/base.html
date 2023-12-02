@@ -42,7 +42,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">About US</a>
+              <a class="nav-link" href="{% url 'about_us' %}">About US</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -60,9 +60,31 @@
       </div>
     </nav>
     {% block content %}
-    <h1 class="text-center bg-info py-3 text-light">
-      Welcome to Bangla Restaurant!
-    </h1>
+    <footer class="mt-5 py-3 bg-info">
+      <div class="row">
+        <div class="col">
+          <p class="text-center text-light">Bangla Restaurent</p>
+        </div>
+        <div class="col">
+          <p class="text-center">Home</p>
+          <p class="text-center">Coverage</p>
+          <p class="text-center">Presference</p>
+          <p class="text-center">Health</p>
+        </div>
+        <div class="col">
+          <p class="text-center">Price List</p>
+          <p class="text-center">Food List</p>
+          <p class="text-center">Beer List</p>
+          <p class="text-center">Drinks List</p>
+        </div>
+        <div class="col">
+          <p class="text-center">About</p>
+          <p class="text-center">Country</p>
+          <p class="text-center">Phone</p>
+          <p class="text-center">Email</p>
+        </div>
+      </div>
+    </footer>
 
     {% endblock %}
 

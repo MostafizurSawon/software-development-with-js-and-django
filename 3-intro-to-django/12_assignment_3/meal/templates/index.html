@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block content %} {{block.super}}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <h1>{{id.name}}</h1>
 
 <section class="container row mx-auto gy-4">
@@ -23,61 +23,4 @@
 
   {% endfor %}
 </section>
-
-
-
-  <footer class="mt-5 py-3 bg-info">
-    <div class="row">
-      <div class="col">
-        <p class="text-center text-light">
-          Bangla Restaurent
-        </p>
-      </div>
-      <div class="col">
-        <p class="text-center">
-          Home
-        </p>
-        <p class="text-center">
-          Coverage
-        </p>
-        <p class="text-center">
-          Presference
-        </p>
-        <p class="text-center">
-          Health
-        </p>
-      </div>
-      <div class="col">
-        <p class="text-center">
-          Price List 
-        </p>
-        <p class="text-center">
-          Food List 
-        </p>
-        <p class="text-center">
-          Beer List 
-        </p>
-        <p class="text-center">
-          Drinks List 
-        </p>
-      </div>
-      <div class="col">
-        <p class="text-center">
-          About
-        </p>
-        <p class="text-center">
-          Country
-        </p>
-        <p class="text-center">
-          Phone
-        </p>
-        <p class="text-center">
-          Email
-        </p>
-      </div>
-    </div>
-  </footer>
-
-    
-  {% endblock %}
-</div>
+{{block.super}} {% endblock %}

@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <div class="mt-5 container">
   <div class="row d-flex align-items-center">
     <div class="col">
@@ -13,3 +13,4 @@
     </div>
   </div>
 </div>
+{{block.super}} {% endblock %}

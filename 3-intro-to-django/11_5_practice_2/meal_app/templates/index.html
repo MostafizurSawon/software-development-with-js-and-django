@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% load static %} {% block content %} {{block.super}}
+<h1>{{id.name}}</h1>
+
+<section class="container row mx-auto gy-4">
+  {% for i in data %}
+
+  <div class="col-4">
+    <div class="card">
+      <img
+        src="{{i.strMealThumb}}"
+        class="card-img-top w-100"
+        alt="meal image"
+      />
+      <div class="card-body">
+        <p class="card-text">ID: {{i.idMeal}}</p>
+        <p class="card-text">Name: {{i.strMeal}}</p>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</section>
+
+{% comment %}
+<h1 class="text-center">
+  I am inside first app
+  <br />
+  <img class="w-50 text-center" src="{% static 'images/bird2.jpeg' %}" />
+</h1>
+{% endcomment %}
+<div class="mt-5">
+  <h5 class="text-center">
+    <img
+      class="w-100"
+      src="https://d3h2k7ug3o5pb3.cloudfront.net/image/2020-11-27/8fb25480-30a8-11eb-ae9f-09e7aa62c338.jpg"
+      alt=""
+    />
+    ©Copyright by
+    <a href="https://mostafizur.netlify.app" target="_blank">MostafiZur</a>
+  </h5>
+</div>
+{% endblock %}

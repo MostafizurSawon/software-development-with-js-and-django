@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{%  load crispy_forms_tags %}
+{% block content %}
+
+
+<form class="rounded-2 p-3 mt-4" style="width:40% ; margin : auto; border:1px solid #5DADE2" method="post">
+    <h1 class="text-center text-info">Add Task</h1>
+    {% csrf_token %}
+    {{form | crispy}}
+
+<button class="btn btn-outline-info">Submit</button>
+</form>
+
+{% endblock %}

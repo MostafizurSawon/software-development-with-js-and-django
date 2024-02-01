@@ -1,0 +1,10 @@
+* {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.custom {
+  font-size: 1.7rem;
+  text-align: justify;
+}

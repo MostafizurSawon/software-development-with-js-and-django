@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="mt-5 container">
+  <div class="row d-flex align-items-center">
+    <div class="col">
+      <p class="text-center custom">
+        It may go by different labels—About, Story, Mission—but these types of
+        pages serve the same key purpose: to be the page for a brand to say,
+        “This is who we are.”
+      </p>
+    </div>
+    <div class="col">
+      <img class="w-100" src="{% static 'about.png' %}" />
+    </div>
+  </div>
+</div>
+{{block.super}} {% endblock %}

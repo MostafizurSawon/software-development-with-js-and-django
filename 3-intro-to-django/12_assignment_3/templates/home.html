@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="text-center bg-info py-3 text-light">
+  Welcome to Bangla Restaurant!
+</h1>
+<div class="container my-5">
+  <div class="row d-flex justify-content-center align-items-center mx-auto">
+    <div class="col">
+      <p class="custom">
+        Welcome to our restuarant. <br />
+        Everthing we provides are collected from a healthy enviroment!
+      </p>
+
+      <button type="button" class="btn btn-outline-info">Reserve</button>
+    </div>
+    <div class="col">
+      <img class="w-100" src="static/home.jpg" alt="Home" />
+    </div>
+  </div>
+</div>
+{{block.super}} {% endblock %}

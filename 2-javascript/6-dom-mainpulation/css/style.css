@@ -1,0 +1,51 @@
+* {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h6 {
+  overflow-y: hidden;
+}
+
+.bg-custom {
+  background-color: rgba(26, 24, 122, 1);
+}
+.nav-search {
+  width: 40vw;
+}
+
+/* carousel */
+.caro-custom {
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgb(104, 125, 229) 0%,
+    rgb(170, 128, 175) 77%,
+    rgba(184, 238, 237, 1) 100%
+  );
+}
+
+.caro-title {
+  font-size: 4rem;
+}
+
+.new-arrival {
+  border-bottom: 1px solid black;
+}
+
+.bg-sale {
+  background-color: rgba(149, 138, 212, 1);
+}
+
+.bg-airpod {
+  background-image: url(https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309682.jpg);
+  background-repeat: no-repeat;
+  background-size: center;
+}
+
+/* .ban-custom {
+  height: 100%;
+  clip-path: inset(0px 0px 0px 150px round 50px);
+} */

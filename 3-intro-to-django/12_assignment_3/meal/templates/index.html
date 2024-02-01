@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<h1>{{id.name}}</h1>
+
+<section class="container row mx-auto gy-4">
+  {% for i in data %}
+
+  <div class="col-4">
+    <div class="card">
+      <img
+        src="{{i.strCategoryThumb}}"
+        class="card-img-top w-100"
+        alt="meal image"
+      />
+      <div class="card-body">
+        <p class="card-text">ID: {{i.idCategory}}</p>
+        <p class="card-text">Name: {{i.strCategory}}</p>
+        <p class="card-text">
+          Description: {{i.strCategoryDescription | truncatewords:10}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</section>
+{{block.super}} {% endblock %}

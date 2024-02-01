@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container-fluid row mt-4">
+  <div class="col d-flex justify-content-center align-items-center bg-light">
+    <div class="">
+        <h2 class="">Welcome to Task management.</h2>
+        <p class="">
+          Here you can create and manage your daily life tasks. Our features:
+          <ul>
+            <li>Create Tasks</li>
+            <li>Manage Tasks</li>
+            <li>Add Category</li>
+            <li>Edit Tasks</li>
+            <li>Delete Tasks</li>
+          </ul>
+        </p>
+      
+    </div>
+  </div>
+  <div class="col">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://img.freepik.com/free-vector/time-management-marketers-teamwork-media-planning-media-representation-control-reach-your-client-best-media-plan_335657-23.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://img.freepik.com/free-vector/business-top-management-online-service-platform-successful-strategy-motivation-leadership-project-manager-online-management-isolated-vector-illustration_613284-1470.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://img.freepik.com/free-vector/business-man-dealing-multi-task-new-idea-working-laptop-concept-business-goals-success-satisfying-achievement_1150-39765.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  
+</div>
+{% endblock %}

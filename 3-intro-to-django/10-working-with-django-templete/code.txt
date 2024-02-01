@@ -1,0 +1,18 @@
+pip install django
+django-admin --version
+pip list
+pip install pipenv
+pipenv --version
+python -m venv room1
+cd room1
+Scripts\activate.bat
+django-admin --version
+
+pip install django==4.1.9
+
+django-admin startproject project_1
+cd project_1
+django-admin startapp first-app  // app create
+python manage.py runserver
+
+py manage.py runserver

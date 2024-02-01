@@ -4,13 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
   </head>
   <body>
     <h1><a href="/">Home</a></h1>
     <h1><a href="/navigator/about/">Navigation App / About</a></h1>
     <h1><a href="/navigator/contact/">Navigation App / Contact</a></h1>
 
+    <div class="m-4 bg-dark text-light rounded-3 p-3">
+    {% comment %} conditional statement  {% endcomment %}
+    <h3 class="text-center">Date: {{ date | date:"D d M Y" }}</h3>
+    
+    <div class="container my-4 text-center">
+      {% if age >= 18 %}
+      <h2 class="bg-success text-light p-2">You are an adult!</h2>
+
+      {% elif age >= 15 and age <= 18 %}
+      <h2 class="bg-warning p-2">You are becoming an adult!</h2>
+
+      {% else %}
+      <h2 class="bg-danger p-2">You are not an adult!</h2> 
+      {% endif %}
+    </div>
+    
+      <h3>Name: {{ name }}</h3>
+      <h5>Age: {{ age }}</h5>
+      <h5>District: {{ district }}</h5>
+      <h5>Rolls: {{ rolls }}</h5>
+    </div>
+
+    {% comment %} loop {% endcomment %}
+    <div class="container row">
+    {% for course in courses %}
+
+      <div class="col">
+        <div class="card bg-light shadow-lg border-0 rounded-3">
+          <div class="card-body">
+            <h5 class="card-title">ID: {{course.id}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Course Name: {{course.name}}</h6>
+            <p class="card-text">Description: {{course.des | truncatechars:10}}</p>
+            <p class="card-text">Fee: {{course.fee}}</p>
+            <a href="#" class="card-link">Enroll</a>
+            <a href="#" class="card-link">Reviews</a>
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+
+    </div>
+
     <h1>This is about page</h1>
     <p>We will update this page soon</p>
   </body>
 </html>
+
+
+{% comment %} https://earthly.dev/blog/django-template-filters/ {% endcomment %}

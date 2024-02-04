@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block css %}
+<link rel="stylesheet" href="{%static 'css/app.css'%}">
+{% endblock css %}
+
+{% block title %}
+<title>Django, Table!</title>
+{% endblock title %}
+
+{% block content %}
+<h1 class="text-center text-white p-3 bg-secondary">Inside First app > Table </h1>
+
+    <div class="my-3">
+      <table class="table caption-top">
+        <caption>List of Users</caption>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">City</th>
+            <th scope="col">Website</th>
+          </tr>
+        </thead>
+        
+      
+      {% for i in user %}
+      
+      <tbody>
+        <tr>
+          <th scope="row">{{i.id}}</th>
+          <td>{{i.name}}</td>
+          <td>{{i.username}}</td>
+          <td>{{i.email}}</td>
+          <td>{{i.address.city}}</td>
+          <td>{{i.website}}</td>
+        </tr>
+        
+      </tbody>
+      {% endfor%}
+    </table>
+    </div>
+
+    <div class="py-3 my-4 text-light bg-secondary text-center">
+      <a class="ms-4" href="../..">Homepage</a>
+      <a class="ms-4" href="../">First App Homepage</a>
+    </div>
+{% endblock content %}
+    

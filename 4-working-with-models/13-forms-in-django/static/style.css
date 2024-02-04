@@ -1,0 +1,15 @@
+.pr{
+  height: 300px;
+}
+
+a{
+  text-decoration: none;
+  color: greenyellow;
+}
+
+.cus{
+  /* font-size: 90px; */
+}
+a:hover{
+  color: white;
+}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block css %}
+<link rel="stylesheet" href="{%static 'css/app.css'%}">
+{% endblock css %}
+
+{% block title %}
+<title>Django, FORM!</title>
+{% endblock title %}
+
+{% block content %}
+<h1 class="text-center p-3 text-light bg-secondary">Inside First app </h1>
+
+<div class="my-3 container row mx-auto">
+  <div class="col">
+    <img class='w-100 pr' src="{%static 'images/mz.png'%}" alt="">
+  </div>
+  <div class="col">
+    <img class='w-100 pr' src="{%static 'images/premio.png'%}" alt="">
+  </div>
+</div>
+
+<div class="py-3 my-4 text-light bg-secondary text-center">
+  <a class="ms-4" href="..">Homepage</a>
+  <a class="ms-4" href="table">Table</a>
+</div>
+{% endblock content %}
+

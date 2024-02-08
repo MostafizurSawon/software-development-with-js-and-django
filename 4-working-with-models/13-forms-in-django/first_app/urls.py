@@ -21,5 +21,8 @@ urlpatterns = [
     path('', views.first, name = 'app_home'),
     path('table/', views.table, name = 'table'),
     path('form/', views.form, name = 'form'),
+    path('django-form/', views.djangoForm, name = 'django_form'),
+    # path('student-form/', views.StudentForm, name = 'student_form'),
+    path('student-form/', views.PasswordValidation, name = 'student_form'),
     path('about/', views.about, name = 'about'),
 ]

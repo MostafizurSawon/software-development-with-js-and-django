@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %} {{ block.super }} {% endcomment %}
+<div class="my-3 container row mx-auto">
+  <div class="col">
+    <img class='w-100 pr' src="{%static 'mz.png'%}" alt="">
+  </div>
+  <div class="col">
+    <img class='w-100 pr' src="{%static 'premio.png'%}" alt="">
+  </div>
+</div>
+
+<div class="py-3 my-4 text-light bg-secondary text-center"><a class="ms-4" href="/first">First App</a></div>
+
+{% endblock content %}
+

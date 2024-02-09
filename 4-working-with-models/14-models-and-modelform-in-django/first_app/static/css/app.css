@@ -1,0 +1,14 @@
+.pr{
+  height: 300px;
+}
+
+a{
+  text-decoration: none;
+  color: greenyellow;
+}
+
+a:hover{
+  color: aliceblue;
+}
+
+

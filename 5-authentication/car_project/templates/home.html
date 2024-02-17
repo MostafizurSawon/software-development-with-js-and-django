@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="d-flex flex-wrap px-5 pt-3 custom align-items-center">
+    <div class="col-6 p-2">
+      <h1 class="my-3">Welcome to CarHub</h1>
+      <p>At CarHub, we have an outstanding selection of pre-owned vehicles of all price ranges. We are now a new car franchise dealer for VinFast and offer a variety of brand new electric vehicles as well.  By carefully screening the vehicles that come our way, we're able to make sure you have a quality car, truck or SUV you can count on for the long run. In addition to our excellent selection of vehicles, we are partnered with the top local and national lenders to get you the best financing options for your new vehicle.  Every vehicle is carefully inspected with our state of the art service department as well.  Bring your vehicle to us for any service needs or basic maintenance.  
+      <br/>
+      At CarHub, you will experience a shopping, buying and ownership experience that's head and shoulders above other dealership choices. Unlike some car dealers you might encounter here in Kansas, we don't resort to false advertising or sales gimmicks. Instead, we take the time to listen to your needs and focus on showing you vehicles that fit your budget. We've created a completely stress-free dealer environment so you can enjoy shopping at your own pace and drive home with the right vehicle.</p>
+    </div>
+    <div class="col-6">
+      <img class="rounded-3 w-100" src="{% static 'home.jpg' %}" />
+    </div>
+  </div>
+
+  <div class="bg-light">
+    <div class="container">
+      <div class="d-flex justify-content-center py-3 row mt-5">
+        <h1 class="text-success p-3 bg-light">Filter By Brands</h1>
+        {% for i in car_brand %}
+          <div class="col p-2 mx-2 bg-secondary d-flex justify-content-center">
+            <div class="">
+              <a href="{% url 'brand_wise_post' i.slug %}" class="text-decoration-none text-warning">
+                {{ i.name }}
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <h2 class="bg-light p-3 ms-2 text-success">Total result found : {{ data|length }}</h2>
+    <div class="row">
+      {% for car in data %}
+        <div class="col-4">
+          <div class="card m-2">
+            <div class="card-body">
+              <img class="home-image" src="{{ car.image.url }}" class="card-img-top " alt="..." />
+              <h6 class="card-title mt-3">Model name: <a href="{% url 'detail_car' car.id %}" class="text-decoration-none text-primary">{{ car.name }}</a></h6>
+              <p class="card-text"><b>Description: </b>{{ car.description|truncatewords:10 }}</p>
+              <p class="card-text"><b>Quantity: </b>{{ car.quantity }}</p>
+              <p class="card-text"><b>Price: </b>{{ car.price }}</p>
+              <p class="card-text"><b>Brand: </b><span class="text-success">{{ car.car_brand }}</span></p>
+              {% comment %} <p>Imported By : {{ car.author.first_name }} {{ car.author.last_name }}</p> {% endcomment %}
+              {% if request.user.is_authenticated %}
+              <a href="{% url 'car_buy' car.id %}" class="btn btn-success">Buy Now</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+<footer class="mt-4 bg-dark text-light row p-5 w-100">
+<div class="col">
+  <h4>CarHub </h4>
+  <h6>Home</h6>
+  <h6>Our Cars</h6>
+  <h6>Prices</h6>
+  <h6>Address</h6>
+</div>
+<div class="col">
+  <h4>Top Car Brands </h4>
+  <h6>Toyota</h6>
+  <h6>Mazda</h6>
+  <h6>Audi</h6>
+  <h6>Honda</h6>
+</div>
+<div class="col">
+  <h4>Services</h4>
+  <h6>Why buy from us?</h6>
+  <h6>Budget frendly</h6>
+  <h6>Quality</h6>
+  <h6>After sale service</h6>
+</div>
+<div class="col">
+  <h4>Contact Us</h4>
+  <h6>Facrbook</h6>
+  <h6>Twitter</h6>
+  <h6>Email</h6>
+  <h6>Phone</h6>
+</div>
+</footer>
+{% endblock %}

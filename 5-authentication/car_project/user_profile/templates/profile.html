@@ -1,0 +1,62 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
+
+<div class="container mt-3">
+  <a class="btn btn-primary" href="{% url 'edit_profile' %}">Edit Your Profile</a>
+  <a class="ms-5 btn btn-warning" href="{% url 'pass_change' %}">Change Your Password</a>
+</div>
+
+
+{% if cart|length != 0%}
+<div class="my-5">
+  <h1 class="bg-light mx-4 p-3 mt-4">Your have Ordered <span class="text-success">{{cart | length}}</span> Car. </h1>
+  <div class="row mt-4 container">
+  {% for car in cart %}
+    <div class="col-4">
+      <div class="card m-2">
+        <div class="card-body">
+          <img class="home-image" src="{{car.image.url}}" class="card-img-top " alt="...">
+          <h6 class="card-title mt-3">Model name: <a href="{% url 'detail_car' car.id %}" class="text-decoration-none text-primary">{{ car.name }}</a></h6>
+                
+              <p class="card-text"><b>Description: </b>{{car.description | truncatewords:25}}</p>
+                <p class="card-text"><b>Price: </b>{{ car.price }}</p>
+              <p>
+                  <b>Brand: </b><span class="text-success">{{ car.car_brand }}</span>
+              </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% comment %} {% for i in data%}
+user: {{i.author.first_name}}
+{%endfor%} {% endcomment %}
+
+{% if data|length != 0%}
+  <h1 class="bg-secondary mx-4 p-3 mt-4 text-light">Cars you have added to this website : {{data | length}}</h1>
+{% endif %}
+<div class="row mt-4 container">
+  {% for car in data %}
+  <div class="col-4">
+    <div class="card m-2">
+      <div class="card-body">
+        <img class="home-image" src="{{car.image.url}}" class="card-img-top " alt="...">
+        <h6 class="card-title mt-3">Model name: <a href="{% url 'detail_car' car.id %}" class="text-decoration-none text-primary">{{ car.name }}</a></h6>
+        <p class="card-text"><b>Description: </b>{{car.description | truncatewords:15}}</p>
+        <p class="card-text"><b>Quantity: </b>{{ car.quantity }}</p>
+        <p class="card-text"><b>Price: </b>{{ car.price }}</p>
+        {% comment %} <p class="card-text"><b>name: </b>{{ car.author.first_name }}</p> {% endcomment %}
+        <p>
+            <b>Brand: </b><span class="text-success">{{ car.car_brand }}</span>
+        </p>
+        <a href="{% url 'edit_car' car.id %}" class="btn btn-warning">Edit</a>
+        <a href="{% url 'delete_car' car.id %}" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
